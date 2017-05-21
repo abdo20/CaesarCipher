@@ -1,5 +1,6 @@
 # the program will ask user to enter a text and key to cipher that text and retern the cipher text
-#
+alphabet='abdefghijklmnopqstuvwxyz'
+capital_alphabet=alphabet.upcase
 #
 # function to start the program dailog with the user take the inputs from the user return the cipher text
   def start_program
@@ -23,12 +24,15 @@
 
   #the function take a character and key and transform the character
   def transform_char char, key
+     # the program need to find the character index in the alphabet to change that index with the key
+     char_index=alphabet.index(char) 
+     capital_char_index=capital_alphabet.index(char)
      #check the character before the proccess
-     if 'abcdefghijklmnopqrstuvwxyz'.include? char
+     if alphabet include? char
          #find the index of the new character will handled be the char_index function
-         char= 'abcdefghijklmnopqrstuvwxyz'[char_index 'abcdefghijklmnopqrstuvwxyz'.index(char), key]
-     elsif 'abcdefghijklmnopqrstuvwxyz'.upcase.include? char
-        char= 'abcdefghijklmnopqrstuvwxyz'.upcase[char_index 'abcdefghijklmnopqrstuvwxyz'.upcase.index(char), key]
+         char=alphabet[new_char_index char_index, key]
+     elsif capital_alphabet.include? char
+         char=capital_alphabet[new_char_index capital_char_index, key]
      end
      char
   end
@@ -36,9 +40,9 @@
 
 
   #function take a index number and key and retun the cipher character index 
-  def char_index index, key
-      if index+key>'abcdefghijklmnopqrstuvwxyz'.length             #to ensure that the index number will go back to a after reaching z
-          new_index=index+key-'abcdefghijklmnopqrstuvwxyz'.length
+  def new_char_index index, key
+      if index+key>alphabet.length             #to ensure that the index number will go back to a after reaching z
+          new_index=index+key-alphabet.length
       else
           new_index=index+key
       end
