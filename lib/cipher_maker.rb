@@ -48,8 +48,3 @@ capital_alphabet=alphabet.upcase
       end
       new_index
   end
-
-
-
-
-   start_program
